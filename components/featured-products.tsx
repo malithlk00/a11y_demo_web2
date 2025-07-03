@@ -54,7 +54,7 @@ export default function FeaturedProducts() {
               <div className="relative aspect-square overflow-hidden">
                 <Image
                   src={product.image || "/placeholder.svg"}
-                  alt={product.name}
+                  // alt={product.name}
                   fill
                   className="object-cover transition-transform hover:scale-105"
                   id="product-image"
