@@ -4,7 +4,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { useSearchParams } from "next/navigation"
 import { ArrowLeft, Check, Minus, Plus, ShoppingCart } from "lucide-react"
-import { useState } from "react"
+import { Suspense, useState } from "react"
 import { Button } from "@/components/ui/button"
 
 const products = [
@@ -14,7 +14,7 @@ const products = [
   { id: 4, name: "Cotton T-Shirt", price: "$29.99", category: "Clothing", image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=900&auto=format&fit=crop", description: "A soft, breathable cotton tee with a relaxed fit that works from morning to night.", features: ["100% cotton", "Relaxed fit", "Machine washable"] },
 ]
 
-export default function ProductPage() {
+function ProductPageContent() {
   const searchParams = useSearchParams()
   const product = products.find((item) => item.id === Number(searchParams.get("id"))) ?? products[0]
   const suggestions = products.filter((item) => item.id !== product.id)
@@ -61,5 +61,13 @@ export default function ProductPage() {
         </section>
       </div>
     </main>
+  )
+}
+
+export default function ProductPage() {
+  return (
+    <Suspense fallback={<main className="min-h-screen bg-slate-50 px-4 py-10 text-slate-950"><div className="mx-auto max-w-6xl">Loading product...</div></main>}>
+      <ProductPageContent />
+    </Suspense>
   )
 }
