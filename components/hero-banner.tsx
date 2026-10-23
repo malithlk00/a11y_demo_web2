@@ -79,7 +79,7 @@ export default function HeroBanner() {
                     fill
                     className="object-cover"
                     priority={index === 0}
-                    id="slider-image"
+                    id={`slider-image-${index + 1}`}
                   />
                 </div>
               ))}
@@ -123,6 +123,7 @@ export default function HeroBanner() {
               <div className="relative h-full w-full">
                 <video
                   ref={videoRef}
+                  aria-label="ShopNow fashion showcase video"
                   className="h-full w-full object-cover"
                   poster="https://images.unsplash.com/photo-1536240478700-b869070f9279?q=80&w=1000&auto=format&fit=crop"
                   muted
