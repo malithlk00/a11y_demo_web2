@@ -99,13 +99,13 @@ export default function Header() {
             <User className="h-4 w-4 sm:h-5 sm:w-5" />
             <span className="sr-only">Account</span>
           </Button>
-          <Button variant="ghost" size="icon" className="relative" tabIndex={9} id="cart-button">
+          <Link href="/cart" aria-label="Cart" className="relative inline-flex h-10 w-10 items-center justify-center rounded-md hover:bg-accent" tabIndex={9} id="cart-button">
             <ShoppingCart className="h-4 w-4 sm:h-5 sm:w-5" />
             <span className="sr-only">Cart</span>
             <span className="absolute right-0 top-0 flex h-3 w-3 sm:h-4 sm:w-4 items-center justify-center rounded-full bg-primary text-[8px] sm:text-[10px] font-medium text-primary-foreground">
               3
             </span>
-          </Button>
+          </Link>
         </div>
       </div>
     </header>
