@@ -46,7 +46,7 @@ export default function Categories() {
               <div className="relative h-[200px] sm:h-[250px] md:h-[300px] w-full overflow-hidden rounded-lg">
                 <Image
                   src={category.image || "/placeholder.svg"}
-                  //alt={category.name}
+                  alt={`${category.name} category`}
                   fill
                   className="object-cover transition-transform group-hover:scale-105"
                 />
