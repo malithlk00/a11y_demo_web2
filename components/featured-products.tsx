@@ -54,10 +54,10 @@ export default function FeaturedProducts() {
               <div className="relative aspect-square overflow-hidden">
                 <Image
                   src={product.image || "/placeholder.svg"}
-                  // alt={product.name}
+                  alt={`${product.name} product photo`}
                   fill
                   className="object-cover transition-transform hover:scale-105"
-                  id="product-image"
+                  id={`product-image-${product.id}`}
                 />
               </div>
               <CardContent className="p-4">
@@ -69,10 +69,9 @@ export default function FeaturedProducts() {
               </CardContent>
               <CardFooter className="p-4 pt-0">
                 <Link
-                  href={product.id === 1 ? "/product" : "/product"}
+                  href={`/product?id=${product.id}`}
                   className="inline-flex h-10 w-full items-center justify-center rounded-md bg-primary px-4 text-xs font-medium text-primary-foreground hover:bg-primary/90 sm:text-sm"
-                  tabIndex={index === 0 ? 50 : index === 1 ? 35 : index === 2 ? 45 : 40}
-                  id="add-to-cart"
+                  id={`view-product-${product.id}`}
                 >
                   Add to Cart
                 </Link>
